@@ -27,7 +27,7 @@ func applyMiddleware(h http.Handler, middleware ...MiddlewareFunc) http.Handler 
 	return h
 }
 
-func handleOrder(_ context.Context, orders pizzabakery.OrderChannel) http.Handler {
+func handleOrder(ctx context.Context, orders pizzabakery.OrderChannel) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		if err := r.ParseForm(); err != nil {
 			http.Error(w, "bad request", http.StatusBadRequest)
@@ -45,7 +45,7 @@ func handleOrder(_ context.Context, orders pizzabakery.OrderChannel) http.Handle
 		}
 
 		reqCtx := r.Context()
-		result, err := orders.Place(reqCtx, order)
+		result, err := orders.Place(decoupleRequestContext(ctx, reqCtx), order)
 		if err != nil {
 			if errors.Is(err, context.DeadlineExceeded) {
 				http.Error(w, "too many requests", http.StatusTooManyRequests)
