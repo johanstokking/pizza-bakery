@@ -1,0 +1,29 @@
+version: "3.5"
+
+services:
+  pizzabakery:
+    build:
+      context: ../
+      dockerfile: ./build/Dockerfile
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+    expose:
+      - "8080"
+    deploy:
+      replicas: 10
+    networks:
+      - pizzabakery
+    stop_grace_period: 30s
+  nginx:
+    image: nginx:1.25-alpine
+    depends_on:
+      - pizzabakery
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    networks:
+      - pizzabakery
+
+networks:
+  pizzabakery: {}

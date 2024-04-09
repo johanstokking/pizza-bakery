@@ -1,0 +1,28 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+/dist/
+
+# Test binary
+*.test
+
+# Output of the go coverage tool
+*.out
+
+# Dependency directories
+.bin/
+.gen/
+vendor/
+
+# Python caches
+__pycache__
+
+# Development environment
+.dev/
+.env
+.envrc
+.venv/
+.vscode/

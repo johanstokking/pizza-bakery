@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Johan's Pizza Bakery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Helvetica', 'Arial', sans-serif;
+            background-color: #f0e130;
+            color: #d61c1c;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        }
+        .toppings {
+            column-count: 2;
+            column-gap: 20px;
+        }
+        .toppings label {
+            display: block; /* Makes each label+input pair respect column layout */
+        }
+        marquee {
+            font-size: 1.5em;
+            color: #d61c1c;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 18px;
+            }
+            .container {
+                width: 100%;
+            }
+            .toppings {
+                column-count: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <marquee>Welcome to Johan's Pizza Bakery!</marquee>
+    <div class="container">
+        <h1>Order Your Pizza Now!</h1>
+        <img src="inspiration.jpg" width="800" height="457" alt="Inspiration">
+        <form action="/order" method="post">
+            <div class="toppings">
+                <label>
+                    <input type="checkbox" name="topping" value="mozzarella cheese">
+                    Mozzarella cheese
+                </label>
+                <label>
+                    <input type="checkbox" name="topping" value="pepperoni">
+                    Pepperoni
+                </label>
+                <label>
+                    <input type="checkbox" name="topping" value="mushrooms">
+                    Mushrooms
+                </label>
+                <label>
+                    <input type="checkbox" name="topping" value="onion">
+                    Onion
+                </label>
+                <label>
+                    <input type="checkbox" name="topping" value="sausage">
+                    Sausage
+                </label>
+                <label>
+                    <input type="checkbox" name="topping" value="bacon">
+                    Bacon
+                </label>
+                <label>
+                    <input type="checkbox" name="topping" value="extra virgin olive oil">
+                    Extra virgin olive oil
+                </label>
+                <label>
+                    <input type="checkbox" name="topping" value="black olives">
+                    Black olives
+                </label>
+                <label>
+                    <input type="checkbox" name="topping" value="green bell peppers">
+                    Green bell peppers
+                </label>
+                <label>
+                    <input type="checkbox" name="topping" value="pineapple">
+                    Pineapple
+                </label>
+                <label>
+                    <input type="checkbox" name="topping" value="ham">
+                    Ham
+                </label>
+                <label>
+                    <input type="checkbox" name="topping" value="spinach">
+                    Spinach
+                </label>
+                <label>
+                    <input type="checkbox" name="topping" value="feta cheese">
+                    Feta cheese
+                </label>
+                <label>
+                    <input type="checkbox" name="topping" value="artichoke hearts">
+                    Artichoke hearts
+                </label>
+                <label>
+                    <input type="checkbox" name="topping" value="garlic">
+                    Garlic
+                </label>
+                <label>
+                    <input type="checkbox" name="topping" value="jalapeños">
+                    Jalapeños
+                </label>
+                <label>
+                    <input type="checkbox" name="topping" value="ricotta cheese">
+                    Ricotta cheese
+                </label>
+                <label>
+                    <input type="checkbox" name="topping" value="chicken">
+                    Chicken
+                </label>
+                <label>
+                    <input type="checkbox" name="topping" value="pesto sauce">
+                    Pesto sauce
+                </label>
+                <label>
+                    <input type="checkbox" name="topping" value="goat cheese">
+                    Goat cheese
+                </label>
+                <label>
+                    <input type="checkbox" name="topping" value="broccoli">
+                    Broccoli
+                </label>
+                <label>
+                    <input type="checkbox" name="topping" value="salami">
+                    Salami
+                </label>
+                <label>
+                    <input type="checkbox" name="topping" value="fresh basil">
+                    Fresh basil
+                </label>
+                <label>
+                    <input type="checkbox" name="topping" value="roasted red peppers">
+                    Roasted red peppers
+                </label>
+                <label>
+                    <input type="checkbox" name="topping" value="chorizo">
+                    Chorizo
+                </label>
+                <label>
+                    Custom
+                    <input type="text" name="topping" placeholder="Enter your own topping">
+                </label>
+            </div>
+            <input type="submit" value="Place Order">
+        </form>
+    </div>
+</body>
+</html>
